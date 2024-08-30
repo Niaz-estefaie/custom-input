@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# Custom Input Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly customizable and reusable input component for React, designed with flexibility and style in mind. This project provides a set of features to create various input types with built-in validation, error handling, and styling options.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Customizable Styles: Easily adjust padding, font size, colors, and border styles.
+- Validation: Built-in support for error and success messages.
+- Flexibility: Supports various input types and can include icons.
+- Accessibility: Designed to be accessible and user-friendly.
 
-## Expanding the ESLint configuration
+## Props
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- label (string): The label for the input field.
+- placeholder (string): Placeholder text for the input field.
+- value (string): Value of the input field.
+- onChange (function): Function to handle input changes.
+- type (string): Type of input (e.g., "text", "password"). Defaults to "text".
+- icon (React.ReactNode): Optional icon to display inside the input field.
+- error (string | null): Error message to display.
+- success (string | null): Success message to display.
+- disabled (boolean): Whether the input is disabled. Defaults to false.
+- width (string): Width of the input field. Defaults to "100%".
+- height (string): Height of the input field. Defaults to "40px".
+- padding (string): Padding for the input field. Defaults to "8px 12px".
+- fontSize (string): Font size for the input field. Defaults to "16px".
+- color (string): Font color for the input field. Defaults to "#333".
+- backgroundColor (string): Background color for the input field. Defaults to "#fff".
+- borderColor (string): Border color for the input field. Defaults to "#ccc".
+- borderRadius (string): Border radius for the input field. Defaults to "8px".
 
-- Configure the top-level `parserOptions` property like this:
+## Acknowledgments
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- React: A JavaScript library for building user interfaces.
+- Styled Components: Visual primitives for the component age.
