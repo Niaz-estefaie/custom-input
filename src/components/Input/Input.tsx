@@ -1,36 +1,61 @@
-import React from 'react';
-import styled from 'styled-components';
-import { InputProps } from './Input.types.ts';
-import './Input.styles.ts';
+import React from "react";
+import { InputWrapper } from "./Input.styles";
+import { InputProps } from "./Input.types"
 
 const Input: React.FC<InputProps> = ({
   label,
   placeholder,
   value,
   onChange,
-  disabled,
+  type = "text",
+  icon,
   error,
   success,
-  icon,
-  ...props
+  disabled = false,
+  width = "100%",
+  height = "40px",
+  padding = "8px 12px",
+  fontSize = "16px",
+  color = "#333",
+  backgroundColor = "#fff",
+  borderColor = "#ccc",
+  borderRadius = "8px",
 }) => {
+  const hasError = !!error;
+  const hasSuccess = !!success;
+
   return (
-    <div className="input-container">
-      {label && <label className="input-label">{label}</label>}
-      <div className={`input-wrapper ${error ? 'error' : ''} ${success ? 'success' : ''}`}>
-        {icon && <span className="input-icon">{icon}</span>}
-        <input
-          className="input-element"
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          disabled={disabled}
-          {...props}
-        />
+    <InputWrapper
+      $width={width}
+      $height={height}
+      $padding={padding}
+      $fontSize={fontSize}
+      $color={color}
+      $backgroundColor={backgroundColor}
+      $borderColor={borderColor}
+      $borderRadius={borderRadius}
+      $hasError={hasError}
+      $hasSuccess={hasSuccess}
+    >
+      <div className="input-container">
+        <label className="input-label">
+          {label}
+        </label>
+        <div className="input-wrapper">
+          {icon && <span className="input-icon">{icon}</span>}
+          <input
+            type={type}
+            className="input-element"
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+            disabled={disabled}
+          />
+        </div>
+        {error && <span className="input-error">{error}</span>}
+        {success && !error && <span className="input-success">{success}</span>}
       </div>
-      {error && <span className="input-error">{error}</span>}
-      {success && <span className="input-success">{success}</span>}
-    </div>
+    </InputWrapper>
   );
 };
 
