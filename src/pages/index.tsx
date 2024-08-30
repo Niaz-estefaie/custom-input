@@ -7,8 +7,7 @@ const HomePage: React.FC = () => {
   const nameInput = useInput('', { required: true, minLength: 3 });
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Welcome to My App</h1>
+    <div>
       <form>
         <Input
           label="Name"

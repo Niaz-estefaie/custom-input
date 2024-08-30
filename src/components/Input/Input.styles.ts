@@ -52,7 +52,7 @@ export const InputWrapper = styled.div<InputWrapperProps>`
     color: ${(props) => props.$color};
     background-color: transparent;
     padding: ${(props) => props.$padding};
-    height: 100%; /* Make sure input takes up full height of wrapper */
+    height: 100%;
 
     &:disabled {
       background-color: #f8f9fa;

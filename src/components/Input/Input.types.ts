@@ -1,5 +1,3 @@
-import { ChangeEvent, ReactNode } from "react";
-
 export interface InputProps {
   label: string;
   placeholder: string;
